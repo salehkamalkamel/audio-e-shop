@@ -1,6 +1,6 @@
-import Container from "../../ui/Container";
-import Heading from "../../ui/Heading";
-import Text from "../../ui/Text";
+import Container from '../../ui/Container';
+import Heading from '../../ui/Heading';
+import Text from '../../ui/Text';
 
 export default function About() {
   return (
@@ -23,10 +23,7 @@ export default function About() {
             </Text>
           </div>
           <div className="flex items-center justify-center order-1 md:order-2">
-            <img
-              src="/public/home/image-best-gear.jpg"
-              className="rounded-[0.5rem]"
-            />
+            <img src="/home/image-best-gear.jpg" className="rounded-[0.5rem]" />
           </div>
         </div>
       </Container>
