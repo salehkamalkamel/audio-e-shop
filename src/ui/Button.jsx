@@ -1,6 +1,6 @@
 import { IoIosArrowForward } from 'react-icons/io';
 
-export default function Button({ children, type, onClick }) {
+export default function Button({ children, type, onClick, className }) {
   const styles = {
     'btn-1': 'bg-primary text-white hover:bg-secondary',
     'btn-2':
@@ -12,7 +12,7 @@ export default function Button({ children, type, onClick }) {
   };
   return (
     <button
-      className={`px-btn-x py-btn-y text-[0.8125rem] uppercase font-bold ${styles[type]}`}
+      className={`px-btn-x py-btn-y text-[0.8125rem] uppercase font-bold ${styles[type]} ${className}`}
       onClick={onClick} // Pass the onClick prop to the button element
     >
       {children}

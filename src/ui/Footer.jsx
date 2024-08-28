@@ -1,8 +1,8 @@
-import { NavLink } from "react-router-dom";
-import Logo from "./Logo";
-import Text from "./Text";
-import { FaFacebookSquare } from "react-icons/fa";
-import { IoLogoInstagram, IoLogoTwitter } from "react-icons/io";
+import { NavLink } from 'react-router-dom';
+import Logo from './Logo';
+import Text from './Text';
+import { FaFacebookSquare } from 'react-icons/fa';
+import { IoLogoInstagram, IoLogoTwitter } from 'react-icons/io';
 
 function SocialIcon({ IconComponent, label }) {
   return (
@@ -23,10 +23,38 @@ export default function Footer() {
           <nav
             className={`flex flex-col sm:flex-row items-center justify-center text-[0.8125rem] font-bold text-white uppercase gap-y-4 gap-x-[2.125rem] leading-[1.5625rem] tracking-[2px]`}
           >
-            <NavLink className="hover:text-primary">Home</NavLink>
-            <NavLink className="hover:text-primary">HEADPHONES</NavLink>
-            <NavLink className="hover:text-primary">SPEAKERS</NavLink>
-            <NavLink className="hover:text-primary">EARPHONES</NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? 'text-primary' : 'hover:text-primary'
+              }
+              to="home"
+            >
+              Home
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? 'text-primary' : 'hover:text-primary'
+              }
+              to="products/headphones"
+            >
+              HEADPHONES
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? 'text-primary' : 'hover:text-primary'
+              }
+              to="products/speakers"
+            >
+              SPEAKERS
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? 'text-primary' : 'hover:text-primary'
+              }
+              to="products/earphones"
+            >
+              EARPHONES
+            </NavLink>
           </nav>
         </div>
 

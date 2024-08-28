@@ -1,21 +1,24 @@
-import Container from "../../ui/Container";
-import MobileMenuItem from "../../ui/MobileMenuItem";
+import Container from '../../ui/Container';
+import MobileMenuItem from '../../ui/MobileMenuItem';
 
 const categoryItems = [
   {
-    imageSrc: "/mobile-menu/headphone.svg",
-    altText: "Headphone image",
-    label: "Headphones",
+    imageSrc: '/mobile-menu/headphone.svg',
+    altText: 'Headphone image',
+    label: 'Headphones',
+    path: '/products/headphones',
   },
   {
-    imageSrc: "/mobile-menu/speaker.svg",
-    altText: "Speaker image",
-    label: "Speakers",
+    imageSrc: '/mobile-menu/speaker.svg',
+    altText: 'Speaker image',
+    label: 'Speakers',
+    path: '/products/speakers',
   },
   {
-    imageSrc: "/mobile-menu/earphone.svg",
-    altText: "Earphone image",
-    label: "Earphones",
+    imageSrc: '/mobile-menu/earphone.svg',
+    altText: 'Earphone image',
+    label: 'Earphones',
+    path: '/products/earphones',
   },
 ];
 
@@ -30,6 +33,7 @@ export default function Categories() {
               imageSrc={item.imageSrc}
               altText={item.altText}
               label={item.label}
+              path={item.path}
             />
           ))}
         </div>

@@ -5,14 +5,38 @@ export default function HeaderNav({ className }) {
     <nav
       className={`md:flex hidden items-center justify-center text-[0.8125rem] font-bold text-white uppercase gap-[2.125rem] leading-[1.5625rem] tracking-[2px] ${className}`}
     >
-      <NavLink className="hover:text-primary" to="home">
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? 'text-primary' : 'hover:text-primary'
+        }
+        to="home"
+      >
         Home
       </NavLink>
-      <NavLink className="hover:text-primary" to="products">
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? 'text-primary' : 'hover:text-primary'
+        }
+        to="products/headphones"
+      >
         HEADPHONES
       </NavLink>
-      <NavLink className="hover:text-primary">SPEAKERS</NavLink>
-      <NavLink className="hover:text-primary">EARPHONES</NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? 'text-primary' : 'hover:text-primary'
+        }
+        to="products/speakers"
+      >
+        SPEAKERS
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? 'text-primary' : 'hover:text-primary'
+        }
+        to="products/earphones"
+      >
+        EARPHONES
+      </NavLink>
     </nav>
   );
 }

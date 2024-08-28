@@ -2,10 +2,12 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import Button from '../../ui/Button';
 import Container from '../../ui/Container';
 import Heading from '../../ui/Heading';
+import { useNavigate } from 'react-router-dom';
 
 export default function Speaker2() {
   const imgRef = useRef(null);
   const [imageHeight, setImageHeight] = useState(0);
+  const navigate = useNavigate();
 
   const updateImageHeight = useCallback(() => {
     if (imgRef.current) {
@@ -54,7 +56,12 @@ export default function Speaker2() {
             <Heading as="h3" className="text-black">
               ZX7 SPEAKER
             </Heading>
-            <Button type="btn-2">See Product</Button>
+            <Button
+              type="btn-2"
+              onClick={() => navigate('/products/speakers/product/5')}
+            >
+              See Product
+            </Button>
           </div>
         </div>
       </Container>

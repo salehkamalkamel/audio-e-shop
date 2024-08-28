@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import Button from '../../ui/Button';
 import Container from '../../ui/Container';
 import Heading from '../../ui/Heading';
@@ -8,6 +9,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 export default function Hero() {
   const imgRef = useRef(null);
   const [imageHeight, setImageHeight] = useState(0);
+  const navigate = useNavigate();
 
   const updateImageHeight = useCallback(() => {
     if (imgRef.current) {
@@ -44,7 +46,12 @@ export default function Hero() {
               Experience natural, lifelike audio and exceptional build quality
               made for the passionate music enthusiast.
             </Text>
-            <Button type="btn-1">See Product</Button>
+            <Button
+              type="btn-1"
+              onClick={() => navigate('/products/headphones/product/1')}
+            >
+              See Product
+            </Button>
           </InfoBox>
         </div>
       </Container>

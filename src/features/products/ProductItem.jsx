@@ -15,7 +15,7 @@ export default function ProductItem({ product, reverse }) {
           <picture>
             <source srcSet={image.desktop} media="(min-width: 1024px)" />
             <source srcSet={image.tablet} media="(min-width: 768px)" />
-            <img src={image.mobile} alt={alt} />
+            <img src={image.mobile} alt={alt} className="rounded-[0.5rem]" />
           </picture>
         </div>
         <InfoBox className={`${reverse && 'order-1'}`}>

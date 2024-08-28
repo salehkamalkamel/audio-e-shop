@@ -7,10 +7,10 @@ import Speaker2 from './Speaker2';
 
 export default function HomeLayOut() {
   return (
-    <div className="flex flex-col gap-16">
+    <div className="flex flex-col gap-40 pb-40">
       <Hero />
       <Categories />
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col">
         <Speaker1 />
         <Speaker2 />
         <Earbods />

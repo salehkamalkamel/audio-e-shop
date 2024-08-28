@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom';
 import Button from '../../ui/Button';
 import Container from '../../ui/Container';
 import Heading from '../../ui/Heading';
@@ -5,6 +6,7 @@ import InfoBox from '../../ui/InfoBox';
 import Text from '../../ui/Text';
 
 export default function Speaker1() {
+  const navigate = useNavigate();
   return (
     <div>
       <Container>
@@ -36,7 +38,12 @@ export default function Speaker1() {
                 Upgrade to premium speakers that are phenomenally built to
                 deliver truly remarkable sound.
               </Text>
-              <Button type="btn-4">See Product</Button>
+              <Button
+                type="btn-4"
+                onClick={() => navigate('/products/speakers/product/4')}
+              >
+                See Product
+              </Button>
             </InfoBox>
           </div>
         </div>
