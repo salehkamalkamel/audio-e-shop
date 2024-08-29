@@ -103,13 +103,6 @@ export default function CheckOutMenu() {
             />
           </div>
         </div>
-
-        <button
-          type="submit"
-          className="w-full px-btn-x py-btn-y text-[0.8125rem] uppercase font-bold bg-primary text-white hover:bg-secondary"
-        >
-          Submit
-        </button>
       </form>
     </div>
   );

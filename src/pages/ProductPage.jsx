@@ -14,7 +14,7 @@ export default function ProductPage() {
   return (
     <div className="pb-24">
       <ProductShow product={product} />
-      <Container className="flex flex-col gap-24">
+      <Container className="flex flex-col gap-16 sm:gap-24">
         <SuggestionList />
         <Categories />
         <About />

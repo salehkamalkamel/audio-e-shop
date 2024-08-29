@@ -12,7 +12,7 @@ export default function ProductShow({ product, reverse }) {
   const { name, isNew, description, image, alt, details, id } = product;
   const [value, setValue] = useState(1);
   const navigate = useNavigate();
-  const { setCartData } = useCart();
+  const { setCartData, setOpenCart } = useCart();
 
   function handleAddToCart() {
     setCartData((prev) => {
@@ -27,6 +27,7 @@ export default function ProductShow({ product, reverse }) {
         return [...prev, { ...product, count: value }];
       }
     });
+    setOpenCart(true);
   }
 
   return (

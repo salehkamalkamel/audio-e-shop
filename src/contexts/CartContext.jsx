@@ -10,7 +10,7 @@ export function CartProvider({ children }) {
     const storedCartData = localStorage.getItem('cartData');
     return storedCartData ? JSON.parse(storedCartData) : [];
   });
-
+  const [openCart, setOpenCart] = useState(false);
   const total = cartData.reduce((acc, cur) => {
     return acc + cur.details.price * cur.count;
   }, 0);
@@ -22,7 +22,9 @@ export function CartProvider({ children }) {
 
   return (
     // Provide cartData and setCartData as an object to children components
-    <CartContext.Provider value={{ cartData, setCartData, total }}>
+    <CartContext.Provider
+      value={{ cartData, setCartData, total, openCart, setOpenCart }}
+    >
       {children}
     </CartContext.Provider>
   );

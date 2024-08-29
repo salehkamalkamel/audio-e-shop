@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../contexts/CartContext';
 import { PiShoppingCart } from 'react-icons/pi';
@@ -7,33 +6,37 @@ import CartItem from './CartItem';
 import Button from '../../ui/Button';
 
 export default function CartMenu() {
-  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-  const { cartData, setCartData, total } = useCart();
+  const { cartData, setCartData, total, openCart, setOpenCart } = useCart();
 
-  const handleToggleMenu = () => setIsOpen((prev) => !prev);
+  const handleToggleMenu = () => setOpenCart((prev) => !prev);
 
   const handleClearCart = () => {
     setCartData([]);
-    setIsOpen(false);
+    setOpenCart(false);
   };
 
   const handleCheckout = () => {
     navigate('/checkout');
-    setIsOpen(false);
+    setOpenCart(false);
   };
 
   return (
     <>
       <button
         onClick={handleToggleMenu}
-        className="text-white text-2xl"
+        className="text-white text-2xl relative w-12 h-12 flex items-center justify-center"
         aria-label="Toggle cart menu"
       >
+        {cartData.length > 0 && (
+          <div className="bg-primary text-white text-[12px] py-1 px-2 rounded-full bottom-0 right-0 absolute">
+            {cartData.length}
+          </div>
+        )}
         <PiShoppingCart />
       </button>
 
-      {isOpen && (
+      {openCart && (
         <>
           <div
             className="fixed inset-0 bg-black opacity-40 z-40"
