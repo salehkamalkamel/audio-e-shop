@@ -6,7 +6,7 @@ export default function SummaryItem({ item }) {
   const count = item?.count || 0;
 
   return (
-    <div className="flex justify-between items-center w-[17rem]">
+    <div className="flex justify-between items-center w-[17rem] gap-4">
       <div className="flex gap-4 items-center">
         {imageUrl && (
           <img

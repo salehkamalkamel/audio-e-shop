@@ -44,7 +44,7 @@ export default function CartMenu() {
             aria-hidden="true"
           ></div>
 
-          <div className="fixed right-12 top-20 z-50 bg-white rounded-lg p-6 flex flex-col gap-4 w-80 sm:w-96 shadow-lg">
+          <div className="fixed inset-x-0 mx-auto top-24 z-50 bg-white rounded-lg p-6 flex flex-col gap-4 w-full max-w-[calc(100%-2rem)] sm:max-w-96 shadow-lg sm:inset-auto sm:right-20 sm:top-20 sm:w-[calc(100%-5rem)] lg:right-20">
             <div className="flex items-center justify-between">
               <Heading as="h6">{`Cart (${cartData.length})`}</Heading>
               <button
