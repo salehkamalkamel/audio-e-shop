@@ -15,7 +15,7 @@ export default function CartItem({ item }) {
   }, [value, item.id, setCartData]);
 
   return (
-    <div className="grid grid-cols-[2fr_1fr] justify-between items-center">
+    <div className="flex  justify-between items-center w-full">
       <div className="flex gap-4 items-center">
         <img
           className="w-[4rem] h-[4rem] rounded-[0.5rem]"
@@ -23,7 +23,7 @@ export default function CartItem({ item }) {
           alt={item.name}
         />
         <div className="flex flex-col items-start">
-          <p className="font-bold text-black text-[0.9375rem] leading-6">
+          <p className="font-bold text-black text-[0.875rem] leading-6">
             {item.name}
           </p>
           <p className="font-bold text-[0.875rem] leading-6 tracking-normal text-darkGray">
@@ -31,7 +31,13 @@ export default function CartItem({ item }) {
           </p>
         </div>
       </div>
-      <Counter value={value} setValue={setValue} min={1} max={10} />
+      <Counter
+        value={value}
+        setValue={setValue}
+        min={1}
+        max={10}
+        className="w-full"
+      />
     </div>
   );
 }
